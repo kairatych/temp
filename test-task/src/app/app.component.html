@@ -1,0 +1,20 @@
+<div class="container">
+  <form class="form-wrapper" [formGroup]="formGroup">
+    <div class="form-group">
+      <label [for]="'number'">Номер:</label>
+      <input [id]="'number'" [type]="'number'" [formControlName]="'number'">
+      <span *ngIf="numberErrorMessage">{{numberErrorMessage}}</span>
+    </div>
+    <div class="form-group">
+      <label [for]="'cadastralNumber'">Кадастровый номер:</label>
+      <input [id]="'cadastralNumber'" [mask]="cadastralMask" [formControlName]="'cadastralNumber'">
+      <span *ngIf="cadastralNumberErrorMessage">{{cadastralNumberErrorMessage}}</span>
+    </div>
+    <div class="form-group">
+      <label [for]="'cadastralNumber'">Номер телефона:</label>
+      <input [id]="'phoneNumber'" [type]="'tel'" [prefix]="phonePrefix" [mask]="phoneMask" [showMaskTyped]="true" [formControlName]="'phoneNumber'">
+      <span *ngIf="phoneNumberErrorMessage">{{phoneNumberErrorMessage}}</span>
+    </div>
+    <button (click)="onSendForm()">button</button>
+  </form>
+</div>
